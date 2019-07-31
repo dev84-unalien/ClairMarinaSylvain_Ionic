@@ -1,0 +1,35 @@
+.recherche{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 70vw;
+    margin-left: 15vw;
+    margin-top: 20%;
+    padding-left: 5vw;
+    border: solid black 1px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgb(128, 128, 197);
+}
+.loupe{
+    font-size: 8vw;
+    padding-top: 1vw;
+    padding-right: 1vw;
+}
+.qrcode{
+    display: flex;
+    justify-content: center;
+    
+    margin-top: 20vw;
+}
+.code{
+    height: 40vw;
+}
+.plan{
+    display: flex;
+    justify-content: center;
+    
+    margin-top: 20vw;
+}
+.map{
+    height: 40vw;
+}
