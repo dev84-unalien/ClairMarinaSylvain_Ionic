@@ -1,0 +1,54 @@
+
+
+#titre {
+    display: flex;
+    align-items: center;
+}
+#myturn {
+    width: 60vw;
+}
+ion-menu-button{
+    width: 10vh;
+    height: 10vh;
+}
+
+#body {    
+    background-color: rgb(218, 218, 241);
+    height: 86vh;
+}
+
+#head {
+    width: 80vw;    
+    height: 6vh;
+    margin-left: 10vw;
+    display: flex;
+    justify-content: space-between;
+}
+#main {
+    height: 76vh;
+    display: flex;    
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+#rejoindre {
+    border: none;
+    height: 40vh;
+    width: 40vh; 
+    border-radius: 50%;
+    margin-left: 14vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+#background {
+    border: none;
+    height: 45.5vh;
+    width: 45.5vh;
+    margin-left: -5vw;
+    background-image: url(../../assets/boutonbleu.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;   
+    border-radius: 50%;
+}
