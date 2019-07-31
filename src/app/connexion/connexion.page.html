@@ -25,9 +25,9 @@
 
   <a [routerLink]="['/inscription']" id="inscrire">Pas inscrit? S'inscrire</a>
   <div id="buttons">
-    <button id="facebook">Facebook</button>
-    <button id="google">Google+</button>
-    <button id="twitter">Twitter</button>
+    <a href="https://fr-fr.facebook.com/" id="facebook"><img class="facebook" src="assets/facebook.png" alt=""></a>
+    <a href="https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faboutme.google.com%2Fu%2F0%2F%3Freferer%3Dgplus&followup=https%3A%2F%2Faboutme.google.com%2Fu%2F0%2F%3Freferer%3Dgplus&flowName=GlifWebSignIn&flowEntry=ServiceLogin" id="google"><img class="google" src="assets/google.png" alt=""></a>
+    <a href="https://twitter.com/login?lang=fr" id="twitter"><img class="twitter" src="assets/twitter.png" alt=""></a>
   </div>
   <ion-button color="primary" (click)="accueil()">Submit</ion-button>
 </ion-content>

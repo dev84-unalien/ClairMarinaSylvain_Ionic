@@ -6,39 +6,15 @@ a{
 
 #buttons{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    margin-top: 25%;
     
+    margin-top: 25%;
+ 
 }
-
-
-#facebook{
-    background-color:#39569a;
-    color:white;
-    font-weight:bolder;
-    border-radius:10%;
-    width: 25vw;
-    height:8vh;
+#buttons a{
+    width: 15vw;
 }
-#google{
-    background-color: #d54835;
-    color:white;
-    font-weight:bolder;
-    border-radius:10%;
-    width: 25vw;
-    height:8vh;
-}
-
-#twitter{
-    background-color: #65c4e6;
-    color:white;
-    font-weight:bolder;
-    border-radius:10%;
-    width: 25vw;
-    height:8vh;
-}
-
 
 ion-button {
     display: flex;
