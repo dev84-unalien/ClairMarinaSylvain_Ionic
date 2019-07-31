@@ -5,5 +5,20 @@
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Password</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
 
+  <a [routerLink]="['/inscription']" id="inscrire">Pas inscrit? S'inscrire</a>
+  <div id="buttons">
+    <button id="facebook">Facebook</button>
+    <button id="google">Google+</button>
+    <button id="twitter">Twitter</button>
+  </div>
+  <ion-button color="primary" (click)="accueil()">Submit</ion-button>
 </ion-content>
