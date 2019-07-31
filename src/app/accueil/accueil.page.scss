@@ -1,10 +1,16 @@
+.info{
+    text-align: center;
+    margin-top: 10vw;
+    font-size: 1.2em;
+    font-family: 'Satisfy', cursive;
+}
 .recherche{
     display: flex;
     justify-content: center;
     flex-direction: row;
     width: 70vw;
     margin-left: 15vw;
-    margin-top: 20%;
+    margin-top: 10vw;
     padding-left: 5vw;
     border: solid black 1px;
     border-radius: 15px;
