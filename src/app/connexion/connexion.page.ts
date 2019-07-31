@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-connexion',
@@ -7,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConnexionPage implements OnInit {
 
-  constructor() { }
-
+  maVariable:NavController;
+  
+  constructor(navCtrl: NavController) {
+    this.maVariable = navCtrl;
+  }
+  accueil(){
+    this.maVariable.navigateForward('accueil');
+  }
   ngOnInit() {
   }
 
