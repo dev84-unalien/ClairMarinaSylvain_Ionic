@@ -37,5 +37,15 @@ ion-title {
     font-family: 'Satisfy', cursive;
     color: rgb(236, 86, 27);
     background-color: rgb(205, 205, 240);
+}#titre {
+    display: flex;
+    align-items: center;
+}
+#myturn {
+    width: 60vw;
+}
+ion-menu-button{
+    width: 10vh;
+    height: 10vh;
 }
 
