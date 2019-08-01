@@ -12,12 +12,8 @@ export class AccueilPage implements OnInit {
 
   ngOnInit() {}
 
-<<<<<<< HEAD
+
   ionViewWillLeave() {}
-=======
-  ionViewWillLeave() {
-  }
->>>>>>> 820f2394b65b46bd9b04e6cb055faee52e895c7b
 
   ionViewDidEnter() {
     let user = JSON.parse(localStorage.user);
