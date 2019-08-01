@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NavController } from "@ionic/angular";
+import * as $ from "jquery";
+import { SecurityService } from "../services/security.service";
 
 @Component({
   selector: "app-connexion",
@@ -12,7 +14,7 @@ export class ConnexionPage implements OnInit {
 
   maVariable: NavController;
 
-  constructor(navCtrl: NavController) {
+  constructor(navCtrl: NavController, public security: SecurityService) {
     this.maVariable = navCtrl;
   }
   accueil() {
@@ -21,10 +23,21 @@ export class ConnexionPage implements OnInit {
       email: this.email,
       password: this.password
     };
-    //Stocker l'objet dans localstorage
-    localStorage.user = JSON.stringify(user);
-    // Change de page
-    this.maVariable.navigateForward("accueil");
+
+    this.security.verifyEmailMessage(user.password);
+
+    this.security.verifyPasswordMessage(user.password);
+
+    if (
+      this.security.checkEmail(user.email) &&
+      this.security.checkPassword(user.password)
+    ) {
+      //Stocker l'objet dans localstorage
+      localStorage.user = JSON.stringify(user);
+      // Change de page
+      this.maVariable.navigateForward("accueil");
+    }
   }
+
   ngOnInit() {}
 }
