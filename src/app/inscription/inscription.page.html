@@ -28,24 +28,50 @@
   </ion-item>
   <ion-item>
     <ion-label position="floating">Password</ion-label>
-    <ion-input [(ngModel)]="password"></ion-input>
+    <ion-input
+      type="password"
+      name="password"
+      value=""
+      [(ngModel)]="password"
+    ></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Confirm Password</ion-label>
-    <ion-input [(ngModel)]="confirmPassword"></ion-input>
+    <ion-input
+      type="password"
+      name="confirmpassword"
+      value=""
+      class="password"
+      [(ngModel)]="confirmPassword"
+    ></ion-input>
   </ion-item>
+  <div class="incorrect" id="inc_name">
+    <span>"Name: ce champ est incorrect"</span>
+  </div>
+  <div class="incorrect" id="inc_surname">
+    "Surname : ce champ est incorrect"
+  </div>
+  <div class="incorrect" id="inc_email">
+    <span>"Email : ce champ est incorrect"</span>
+  </div>
+  <div class="incorrect" id="inc_password">
+    <span>"Password" : "Votre password est trop petit, 8 car min"</span>
+  </div>
+  <div class="incorrect" id="inc_confirmpassword">
+    <span>"ConfirmPassword" : "Votre password est trop petit, 8 car min"</span>
+  </div>
   <div id="buttons">
-      <a href="https://fr-fr.facebook.com/" id="facebook"
-        ><img class="facebook" src="assets/facebook.png" alt=""
-      /></a>
-      <a
-        href="https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faboutme.google.com%2Fu%2F0%2F%3Freferer%3Dgplus&followup=https%3A%2F%2Faboutme.google.com%2Fu%2F0%2F%3Freferer%3Dgplus&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
-        id="google"
-        ><img class="google" src="assets/google.png" alt=""
-      /></a>
-      <a href="https://twitter.com/login?lang=fr" id="twitter"
-        ><img class="twitter" src="assets/twitter2.png" alt=""
-      /></a>
-    </div>
+    <a href="https://fr-fr.facebook.com/" id="facebook"
+      ><img class="facebook" src="assets/facebook.png" alt=""
+    /></a>
+    <a
+      href="https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faboutme.google.com%2Fu%2F0%2F%3Freferer%3Dgplus&followup=https%3A%2F%2Faboutme.google.com%2Fu%2F0%2F%3Freferer%3Dgplus&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+      id="google"
+      ><img class="google" src="assets/google.png" alt=""
+    /></a>
+    <a href="https://twitter.com/login?lang=fr" id="twitter"
+      ><img class="twitter" src="assets/twitter2.png" alt=""
+    /></a>
+  </div>
   <ion-button color="primary" (click)="accueil()">Submit</ion-button>
 </ion-content>

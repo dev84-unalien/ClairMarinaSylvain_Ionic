@@ -1,30 +1,42 @@
 ion-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30%;
-    margin:35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  margin: 35%;
 }
-#item_1{
-    margin-top: 3vh;
-}a{
-    display: flex;
-    justify-content: center;
-    margin-top: 10%;
+#item_1 {
+  margin-top: 3vh;
+}
+a {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
 }
 
-#buttons{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    
- 
+#buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-#buttons a{
-    width: 15vw;
+#buttons a {
+  width: 15vw;
 }
 
 ion-button {
-    margin-top:10vh;
+  margin-top: 10vh;
+}
 
+.incorrect {
+  color: red;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#inc_name,
+#inc_surname,
+#inc_email,
+#inc_password,
+#inc_confirmpassword {
+  display: none;
 }
