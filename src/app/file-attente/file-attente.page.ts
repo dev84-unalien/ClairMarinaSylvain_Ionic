@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import * as $ from "jquery";
+
 @Component({
   selector: 'app-file-attente',
   templateUrl: './file-attente.page.html',
@@ -11,5 +13,20 @@ export class FileAttentePage implements OnInit {
 
   ngOnInit() {
   }
+  appuyé = true;
 
+  button(){
+    
+    if (this.appuyé == true){
+    $("#background").removeClass("unclicked");
+    $("#background").addClass("clicked");
+    this.appuyé = false;
+  }
+  else {
+    $("#background").removeClass("clicked");
+    $("#background").addClass("unclicked");
+    this.appuyé = true;
+  }
+
+}
 }
