@@ -8,7 +8,7 @@ a{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 10vw;
+    margin-top: 0vw;
 }
 #buttons a{
     width: 15vw;
@@ -34,4 +34,7 @@ ion-button {
 }
 #mdp{
     margin-top: 0vw;
+}
+.count{
+    margin-top:-15vw;
 }

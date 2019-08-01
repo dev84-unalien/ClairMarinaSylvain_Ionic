@@ -7,24 +7,25 @@ ion-button {
 }
 #item_1{
     margin-top: 3vh;
-}a{
+}
+a{
     display: flex;
     justify-content: center;
     margin-top: 10%;
 }
-
 #buttons{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
- 
+    margin-top: -30vw;
 }
 #buttons a{
     width: 15vw;
 }
+.google {
+    height: 7.5vh;
+}
 
 ion-button {
-    margin-top:10vh;
-
+    margin-top: 15vw;
 }
