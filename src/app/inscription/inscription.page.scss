@@ -5,3 +5,26 @@ ion-button {
     width: 30%;
     margin:35%;
 }
+#item_1{
+    margin-top: 3vh;
+}a{
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+#buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+ 
+}
+#buttons a{
+    width: 15vw;
+}
+
+ion-button {
+    margin-top:10vh;
+
+}
