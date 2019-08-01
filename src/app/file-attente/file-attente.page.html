@@ -17,10 +17,18 @@
 <ion-content>
   <div id="body">
     <div id="main">
-      <div id="nombre">Personnes dans la file d'attente : </div>
-      <div id="temps">Temps d'attente estimé : </div>
+      <div id="haut">
+        <div id="hautGauche">
+          <div id="nombre">Personnes dans la file d'attente : </div>
+          <div id="temps">Temps d'attente estimé : </div>
+        </div>
+        <div id="hautDroite">
+            <div id="valeurNombre">13</div>
+            <div id="valeurTemps">12min 45s</div>
+          </div>
+      </div>
       <div id="rejoindre">
-        <div id="background"></div>
+        <div id="background" class="unclicked" (click)='button()'></div>
       </div>
     </div>
   </div>
