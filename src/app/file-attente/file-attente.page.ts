@@ -30,10 +30,16 @@ export class FileAttentePage implements OnInit {
 
     $("#joinText").text("Vous avez rejoint la file d'attente")
     $("#joinText").css("color","red");
+    
     this.appuyé = false;
     this.nbattente +=1;
-    this.nbminute +=5; 
+    this.nbminute +=5;     
     this.nbseconde +=15;   
+
+   if (this.nbseconde == 60){
+    this.nbminute += 1;   
+    this.nbseconde =0;
+   }  
   }
   else {
     $("#background").removeClass("clicked");
@@ -41,10 +47,15 @@ export class FileAttentePage implements OnInit {
 
   $("#joinText").text("Vous avez quitté la file d'attente");
   $("#joinText").css("color","blue");
+
     this.appuyé = true;
     this.nbattente -=1; 
     this.nbminute -=5;  
     this.nbseconde -=15; 
+    if (this.nbseconde == 60){
+     this.nbminute -= 1;   
+     this.nbseconde =0;
+    }  
   }
 
   $("#valeurNombre").text(this.nbattente);
