@@ -39,6 +39,11 @@
 }
 #valeurNombre {    
     font-size: 10vw;
+    visibility: hidden;
+}
+#valeurTemps {  
+    visibility: hidden;
+    margin-left: -4vw;
 }
 #nombre {    
     margin-bottom: 4vh;
@@ -74,8 +79,16 @@
 }
 
 #nombre ,#temps {
-    margin-left: 6vw;
+    margin-left: 3vw;
     font-family: 'Satisfy', cursive;
     font-size: 7vw;
     width: 80vw;
+}
+#joinText {
+    visibility: hidden;
+    margin-top: 2vh;
+    margin-left: 6vw;
+    font-size: 7vw;
+    color: red;
+    font-family: 'Satisfy', cursive;
 }
