@@ -13,7 +13,6 @@ export class AccueilPage implements OnInit {
   ngOnInit() {}
 
   ionViewWillLeave() {
-    alert("test");
   }
 
   ionViewDidEnter() {
