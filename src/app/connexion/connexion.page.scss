@@ -9,7 +9,7 @@ a{
     justify-content: space-around;
     align-items: center;
     
-    margin-top: 25%;
+    margin-top: 10vw;
  
 }
 #buttons a{
@@ -20,7 +20,14 @@ ion-button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
-    margin:35%;
+    width: 30vw;
+    margin:35vw;
+    margin-top: 15vw;
 
+}
+#float{
+    margin-top: 10vw;
+}
+.ou{
+    text-align: center;
 }

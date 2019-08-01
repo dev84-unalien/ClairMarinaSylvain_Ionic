@@ -26,7 +26,5 @@ export class ConnexionPage implements OnInit {
     // Change de page
     this.maVariable.navigateForward("accueil");
   }
-
   ngOnInit() {}
-
 }

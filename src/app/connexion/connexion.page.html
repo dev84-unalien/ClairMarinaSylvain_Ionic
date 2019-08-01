@@ -14,8 +14,8 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-label position="floating">Email</ion-label>
+  <ion-item id="float">
+    <ion-label  position="floating">Email</ion-label>
     <ion-input [(ngModel)]="email"></ion-input>
   </ion-item>
   <ion-item>
@@ -23,7 +23,9 @@
     <ion-input [(ngModel)]="password"></ion-input>
   </ion-item>
 
-  <a [routerLink]="['/inscription']" id="inscrire">Pas inscrit? S'inscrire</a>
+  <a [routerLink]="['/inscription']" id="inscrire">Créer un compte</a>
+  <p class="ou">ou</p>
+  <a [routerLink]="['/home']" id="home">Mot de passe oublié</a>
   <div id="buttons">
     <a href="https://fr-fr.facebook.com/" id="facebook"
       ><img class="facebook" src="assets/facebook.png" alt=""
