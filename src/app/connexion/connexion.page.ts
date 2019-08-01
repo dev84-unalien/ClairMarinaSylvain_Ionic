@@ -36,6 +36,8 @@ export class ConnexionPage implements OnInit {
       localStorage.user = JSON.stringify(user);
       // Change de page
       this.maVariable.navigateForward("accueil");
+      // Simule la connection
+        localStorage.connect = true;
     }
   }
 
