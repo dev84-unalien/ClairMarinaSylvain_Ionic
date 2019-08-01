@@ -18,11 +18,5 @@ export class AccueilPage implements OnInit {
   ionViewDidEnter() {
     let user = JSON.parse(localStorage.user);
     this.email = user.email;
-
-    if (localStorage.connect == "true") {
-      localStorage.connect = false;
-    } else {
-      localStorage.connect = true;
-    }
   }
 }

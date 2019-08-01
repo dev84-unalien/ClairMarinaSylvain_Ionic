@@ -18,4 +18,19 @@ ion-item{
     font-size: 7vw;
 
 }
+#deconnexion{
+    display: flex;
+    flex-direction: row;
+}
+.deconnect{
+    height: 10vw;
+    width: 10vw;
+    margin-top: 3vw;
+}
+p{
+    color: rgb(134, 92, 92);  
+    font-size: 7vw;
+    margin-left: 3.5vw;
+    margin-top: 3.5vw;
+}
 
