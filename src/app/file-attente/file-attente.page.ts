@@ -14,19 +14,23 @@ export class FileAttentePage implements OnInit {
   ngOnInit() {
   }
   appuyé = true;
-
+  nbattente = 0;
+  
   button(){
     
     if (this.appuyé == true){
     $("#background").removeClass("unclicked");
     $("#background").addClass("clicked");
     this.appuyé = false;
+    this.nbattente +=1; 
   }
   else {
     $("#background").removeClass("clicked");
     $("#background").addClass("unclicked");
     this.appuyé = true;
+    this.nbattente -=1; 
   }
+  $("#valeurNombre").text(this.nbattente)
 
 }
 }
