@@ -1,33 +1,41 @@
 <ion-header>
   <ion-toolbar>
-      <ion-title>
-        <div id="titre">
-          <div>
-            <ion-buttons>
-              <ion-menu-button></ion-menu-button>
-            </ion-buttons>
-          </div>
-          <div id="myturn">MyTurn</div>
+    <ion-title>
+      <div id="titre">
+        <div>
+          <ion-buttons>
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
         </div>
-      </ion-title>
+        <div id="myturn">MyTurn</div>
+      </div>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-item>
     <ion-label position="floating">Email</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="email"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Password</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="password"></ion-input>
   </ion-item>
 
   <a [routerLink]="['/inscription']" id="inscrire">Pas inscrit? S'inscrire</a>
   <div id="buttons">
-    <a href="https://fr-fr.facebook.com/" id="facebook"><img class="facebook" src="assets/facebook.png" alt=""></a>
-    <a href="https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faboutme.google.com%2Fu%2F0%2F%3Freferer%3Dgplus&followup=https%3A%2F%2Faboutme.google.com%2Fu%2F0%2F%3Freferer%3Dgplus&flowName=GlifWebSignIn&flowEntry=ServiceLogin" id="google"><img class="google" src="assets/google.png" alt=""></a>
-    <a href="https://twitter.com/login?lang=fr" id="twitter"><img class="twitter" src="assets/twitter.png" alt=""></a>
+    <a href="https://fr-fr.facebook.com/" id="facebook"
+      ><img class="facebook" src="assets/facebook.png" alt=""
+    /></a>
+    <a
+      href="https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faboutme.google.com%2Fu%2F0%2F%3Freferer%3Dgplus&followup=https%3A%2F%2Faboutme.google.com%2Fu%2F0%2F%3Freferer%3Dgplus&flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+      id="google"
+      ><img class="google" src="assets/google.png" alt=""
+    /></a>
+    <a href="https://twitter.com/login?lang=fr" id="twitter"
+      ><img class="twitter" src="assets/twitter.png" alt=""
+    /></a>
   </div>
   <ion-button color="primary" (click)="accueil()">Submit</ion-button>
 </ion-content>

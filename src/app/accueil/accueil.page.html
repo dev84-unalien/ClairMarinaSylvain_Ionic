@@ -1,4 +1,7 @@
-<link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css?family=Satisfy&display=swap"
+  rel="stylesheet"
+/>
 <ion-header>
   <ion-title>
     <div id="titre">
@@ -13,12 +16,19 @@
 </ion-header>
 <ion-content>
   <div id="fond">
+    <div class="info">
+      <p>Bienvenu {{ email }}</p>
+    </div>
     <div class="info"><p>L'appli pour rejoindre votre file d'attente !</p></div>
     <div class="recherche">
-      <ion-input type="search" id="search" placeholder="Recherche"><img src="" alt=""></ion-input>
+      <ion-input type="search" id="search" placeholder="Recherche"
+        ><img src="" alt=""
+      /></ion-input>
       <ion-icon class="loupe" name="search"></ion-icon>
     </div>
-    <div class="qrcode"><img class="code" src="assets/qrcode.png" alt=""></div>
-    <div class="plan"><img class="map" src="assets/plan.png" alt=""></div>
+    <div class="qrcode">
+      <img class="code" src="assets/qrcode.png" alt="" />
+    </div>
+    <div class="plan"><img class="map" src="assets/plan.png" alt="" /></div>
   </div>
 </ion-content>
