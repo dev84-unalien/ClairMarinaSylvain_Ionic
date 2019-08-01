@@ -22,7 +22,7 @@ export class InscriptionPage implements OnInit {
 
   accueil() {
     //this.ajaxCtrl.send("monUrl", { email: "test@gmail.com" });
-    //this.nav.navigateForward("accueil");
+    this.nav.navigateForward("accueil");
   }
   ngOnInit() {}
 }
