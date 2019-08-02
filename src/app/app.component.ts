@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-
+import * as $ from "jquery";
 import { Platform, NavController } from "@ionic/angular";
 import { SplashScreen } from "@ionic-native/splash-screen/ngx";
 import { StatusBar } from "@ionic-native/status-bar/ngx";
@@ -28,6 +28,19 @@ export class AppComponent {
       this.nav.navigateForward("connexion");
     }
   }
+
+  button() {
+    if (localStorage.connect == "true") {
+      localStorage.connect = "false";
+      this.nav.navigateForward("accueil");
+      $(".change").text("Connexion");
+    }
+    else{
+      $(".change").text("Déconnexion");
+      this.nav.navigateForward("connexion");
+    }
+  }
+  
 
   initializeApp() {
     this.platform.ready().then(() => {

@@ -18,8 +18,8 @@
           <ion-item button [routerLink]="['/connexion']">Connexion</ion-item>
           <ion-item button [routerLink]="['/inscription']">Inscription</ion-item>
           <div id="deconnexion">
-            <p>Déconnexion</p>
-            <ion-icon button name="log-out" md="md-log-out" class="deconnect"></ion-icon>
+            <ion-item class="change" button (click)="button()">Déconnexion</ion-item>
+            <ion-icon name="log-out" md="md-log-out" class="deconnect"></ion-icon>
           </div>
         </ion-menu-toggle>
       </ion-list>
