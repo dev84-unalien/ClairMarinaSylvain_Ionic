@@ -1,5 +1,7 @@
 {
   "name": "MyTurn",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
