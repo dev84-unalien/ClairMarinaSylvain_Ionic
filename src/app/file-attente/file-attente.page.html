@@ -24,13 +24,16 @@
         </div>
         <div id="hautDroite">
             <div id="valeurNombre">&nbsp;</div>
-            <div id="valeurTemps">&nbsp;</div>
+            <div id="valeurTemps"><p *ngIf="hidevalue==false"> {{maxTime}}</p></div>
           </div>
       </div>
       <div id="rejoindre">
         <div id="background" class="unclicked" (click)='button()'></div>
       </div>      
       <div id="joinText">&nbsp;</div>
+    </div>
+    <div id="votreTour">
+      <div id="messageVotreTour"><div>C'est votre </div><div>Tour</div><div> !!!</div></div>
     </div>
   </div>
 </ion-content>

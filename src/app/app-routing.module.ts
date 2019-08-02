@@ -8,7 +8,8 @@ const routes: Routes = [
   { path: 'accueil', loadChildren: './accueil/accueil.module#AccueilPageModule' },
   { path: 'file-attente', loadChildren: './file-attente/file-attente.module#FileAttentePageModule' },
   { path: 'inscription', loadChildren: './inscription/inscription.module#InscriptionPageModule' },
-  { path: 'connexion', loadChildren: './connexion/connexion.module#ConnexionPageModule' },  { path: 'avous', loadChildren: './avous/avous.module#AvousPageModule' },
+  { path: 'connexion', loadChildren: './connexion/connexion.module#ConnexionPageModule' },
+
 
 ];
 
