@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NavController } from "@ionic/angular";
 import * as $ from "jquery";
-import { SecurityService } from "../services/security.service";
+import { SecurityService } from "../services/SecurityService";
 
 @Component({
   selector: "app-connexion",
