@@ -1,21 +1,20 @@
 ion-button {
-
   display: flex;
   justify-content: center;
   align-items: center;
   width: 30%;
   margin: 35%;
 }
+
 #item_1 {
   margin-top: 3vh;
 }
+
 a {
   display: flex;
   justify-content: center;
   margin-top: 10%;
 }
-
-
 
 #buttons{
     display: flex;
@@ -24,9 +23,11 @@ a {
     margin-top: -30vw;
 
 }
+
 #buttons a {
   width: 15vw;
 }
+
 .google {
     height: 7.5vh;
 }
@@ -46,6 +47,3 @@ a {
 }
 
 
-.google {
-    height: 7.5vh;
-}
