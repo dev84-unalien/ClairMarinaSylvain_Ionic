@@ -25,6 +25,14 @@ export class FileAttentePage implements OnInit {
   }
 
   button() {
+    
+    if (this.nbattente == -1){
+      $("#main").css("display","none");
+      $("#votreTour").css("display","flex");
+    }
+    else {
+      $("#main").css("display","flex");
+      $("#votreTour").css("display","none");}
 
     if (this.appuyé == true) {
       $("#background").removeClass("unclicked");

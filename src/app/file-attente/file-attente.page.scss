@@ -92,3 +92,23 @@
     color: red;
     font-family: 'Satisfy', cursive;
 }
+
+#votreTour {
+    height: 76vh;
+    background: rgb(188, 179, 236);
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+}
+#messageVotreTour{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 70vw;
+    height: 30vh;
+    color: red;
+    font-size: 16vw;
+    font-family: 'Satisfy', cursive;
+}
