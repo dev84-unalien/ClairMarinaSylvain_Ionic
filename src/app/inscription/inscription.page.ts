@@ -25,20 +25,29 @@ export class InscriptionPage implements OnInit {
   accueil() {
     let user = {
       email: this.email,
-      password: this.password
+      password: this.password,
+      name: this.name,
+      surname: this.surname
     };
 
-    this.security.verifyEmailMessage(user.password);
-
+    this.security.verifyNameMessage(user.name);
+    this.security.verifySurnameMessage(user.surname);
+    this.security.verifyEmailMessage(user.email);
     this.security.verifyPasswordMessage(user.password, this.confirmPassword);
 
+   
+
     if (
+      this.security.checkName(user.name) &&
+      this.security.checkSurname(user.surname) &&
       this.security.checkEmail(user.email) &&
-      this.security.checkPassword(user.password)
+      this.security.checkPassword(user.password) &&
+      this.security.checkPasswordAndCofirm(user.password, this.confirmPassword)
     ) {
       //this.ajaxCtrl.send("monUrl", { email: "test@gmail.com" });
       this.nav.navigateForward("accueil");
     }
   }
+
   ngOnInit() {}
 }
