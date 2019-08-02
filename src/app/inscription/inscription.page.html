@@ -33,6 +33,7 @@
       name="password"
       value=""
       [(ngModel)]="password"
+      placeholder="Utilisez au moins huit caractères "
     ></ion-input>
   </ion-item>
   <ion-item>
@@ -60,6 +61,7 @@
   <div class="incorrect" id="inc_confirmpassword">
     <span>"ConfirmPassword" : "Votre password est trop petit, 8 car min"</span>
   </div>
+  <ion-button color="primary" (click)="accueil()">Submit</ion-button>
   <div id="buttons">
     <a href="https://fr-fr.facebook.com/" id="facebook"
       ><img class="facebook" src="assets/facebook.png" alt=""
@@ -73,5 +75,4 @@
       ><img class="twitter" src="assets/twitter2.png" alt=""
     /></a>
   </div>
-  <ion-button color="primary" (click)="accueil()">Submit</ion-button>
 </ion-content>
