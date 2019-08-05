@@ -9,11 +9,12 @@ import * as $ from 'jquery';
 })
 export class AccueilPage implements OnInit {
   email: string;
+  connection: any;
+  connexion: any;
 
   constructor() {}
 
   ngOnInit() {}
-
 
   ionViewWillLeave() {}
 
@@ -26,8 +27,7 @@ export class AccueilPage implements OnInit {
     const context = this;
     let qr = new QRScanner();
     
-    qr.prepare()
-    .then((status: QRScannerStatus) => {
+    qr.prepare().then((status: QRScannerStatus) => {
        if (status.authorized) {
          // camera permission was granted
   
@@ -50,12 +50,11 @@ export class AccueilPage implements OnInit {
        } else {
          // permission was denied, but not permanently. You can ask for permission again at a later time.
        }
-    })
-    .catch((e: any) => console.log('Error is', e));
+    }).catch((e: any) => console.log('Error is', e));
   }
-
 
   resultQR (resultat) {
       alert(resultat);
   }
+
 }
