@@ -10,8 +10,10 @@
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
       </div>
-      <div id="myturn"><img class="ticket" src="assets/ticketAcc.png"></div>
-      <a class="user1" [routerLink]="['/connexion']" id="connect"><img class="user" src="assets/user.png" alt="" /></a>
+      <div id="myturn"><img class="ticket" src="assets/ticketAcc.png" /></div>
+      <a class="user1" [routerLink]="['/connexion']" id="connect"
+        ><img class="user" src="assets/user.png" alt=""
+      /></a>
     </div>
   </ion-title>
 </ion-header>
@@ -30,6 +32,8 @@
     <div class="qrcode">
       <img (click)="starQR()" class="code" src="assets/qrcode.png" alt="" />
     </div>
-    <div class="plan"><img class="map" src="assets/plan.png" alt="" /></div>
+    <div class="plan">
+      <img class="map" src="assets/plan.png" alt="" />
+    </div>
   </div>
 </ion-content>
