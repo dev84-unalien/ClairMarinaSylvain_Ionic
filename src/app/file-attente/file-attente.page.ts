@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import * as $ from "jquery";
 
+import { Vibration } from '@ionic-native/vibration/ngx';
+
 @Component({
   selector: 'app-file-attente',
   templateUrl: './file-attente.page.html',
@@ -14,25 +16,33 @@ export class FileAttentePage implements OnInit {
   nbminute = 0;
   nbseconde = 0;
 
-  constructor() { 
+constructor() {
+  
+}
 
-   /* setInterval(function a (){
-      this.nbminute =this.nbminute-1;
-      $("#valeurTemps").css("visibility", "visible");
-      $("#valeurTemps").text(this.nbminute); }, 1000);*/}
+vibrate () {
+  const vibration = new Vibration();
+  vibration.vibrate([2000, 1000, 2000]);
+}
 
   ngOnInit() {
   }
 
+  /* setInterval(function a (){
+      this.nbminute =this.nbminute-1;
+      $("#valeurTemps").css("visibility", "visible");
+      $("#valeurTemps").text(this.nbminute); }, 1000);*/
+
   button() {
-    
-    if (this.nbattente == -1){
-      $("#main").css("display","none");
-      $("#votreTour").css("display","flex");
+    this.vibrate();
+    if (this.nbattente == -1) {
+      $("#main").css("display", "none");
+      $("#votreTour").css("display", "flex");
     }
     else {
-      $("#main").css("display","flex");
-      $("#votreTour").css("display","none");}
+      $("#main").css("display", "flex");
+      $("#votreTour").css("display", "none");
+    }
 
     if (this.appuyé == true) {
       $("#background").removeClass("unclicked");
