@@ -8,7 +8,7 @@ export class SecurityService {
 
   constructor() {}
   verifyNameMessage(name: string) {
-    if (!name) {
+    if (name == "") {
       $("#inc_name").css("display", "flex");
     } else {
       $("#inc_name").css("display", "none");

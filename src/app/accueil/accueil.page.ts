@@ -1,8 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
-import { Platform } from '@ionic/angular';
-import { GoogleMaps, GoogleMap, Environment } from '@ionic-native/google-maps/ngx';
-import * as $ from 'jquery';
+import { UserService } from "../services/user.service";
+import { QRScanner, QRScannerStatus } from "@ionic-native/qr-scanner/ngx";
+import { Platform } from "@ionic/angular";
+import {GoogleMaps,GoogleMap,Environment} from "@ionic-native/google-maps/ngx";
+import * as $ from "jquery";
 
 @Component({
   selector: "app-accueil",
@@ -10,51 +11,60 @@ import * as $ from 'jquery';
   styleUrls: ["./accueil.page.scss"]
 })
 export class AccueilPage implements OnInit {
-
   connection: any;
   connexion: any;
 
   email: string;
-  map: GoogleMap;  
+  map: GoogleMap;
+  UserService: any;
 
-  constructor(private platform: Platform) { }
+  constructor(private platform: Platform) {}
 
   async ngOnInit() {
     await this.platform.ready();
   }
 
-  ionViewWillLeave() { }
+ 
 
+  showMap = false;
+ 
+  icone() {
+    if (this.UserService.isConnected()) {
+      this.cacheIconeUtilisateur();
+    } else {
+      this.afficheIconeUtilisateur();
+    }
+  }
+  ionViewWillLeave() {}
 
   ionViewDidEnter() {
     let user = JSON.parse(localStorage.user);
-    this.email = user.email;    
-    
+    this.email = user.email;
+
+
     $("#map_canvas").hide();
-      this.showMap = false;
+    this.showMap = false;
+
+    this.icone();
   }
 
-  showMap= false;
 
   loadMap() {
-    if (Environment){
+    if (Environment) {
       Environment.setEnv({
-        'API_KEY_FOR_BROWSER_RELEASE': 'AIzaSyBb-oaPjtNbVzZ_1YEoy_3k09z6KVdgOCQ',
-        'API_KEY_FOR_BROWSER_DEBUG': 'AIzaSyBb-oaPjtNbVzZ_1YEoy_3k09z6KVdgOCQ',
+        API_KEY_FOR_BROWSER_RELEASE: "AIzaSyBb-oaPjtNbVzZ_1YEoy_3k09z6KVdgOCQ",
+        API_KEY_FOR_BROWSER_DEBUG: "AIzaSyBb-oaPjtNbVzZ_1YEoy_3k09z6KVdgOCQ"
       });
-      
     }
-    
-    
+
     if (this.showMap == false) {
       $("#fond").hide();
       $("#map_canvas").show();
-      this.map = GoogleMaps.create('map_canvas');
-    //  Environment.setBackgroundColor('red');
-      this.showMap = true;
-    }
 
-    else {
+      this.map = GoogleMaps.create("map_canvas");
+      //  Environment.setBackgroundColor('red');
+      this.showMap = true;
+    } else {
       $("#fond").show();
       $("#map_canvas").hide();
       this.showMap = false;
@@ -65,12 +75,10 @@ export class AccueilPage implements OnInit {
     const context = this;
     let qr = new QRScanner();
 
-
     qr.prepare()
       .then((status: QRScannerStatus) => {
         if (status.authorized) {
-          // camera permission was granted
-
+          // camera permission was gran
 
           // start scanning
           let scanSub = qr.scan().subscribe((text: string) => {
@@ -82,7 +90,6 @@ export class AccueilPage implements OnInit {
 
           qr.show();
           $("body").hide();
-
         } else if (status.denied) {
           // camera permission was permanently denied
           // you must use QRScanner.openSettings() method to guide the user to the settings page
@@ -91,13 +98,23 @@ export class AccueilPage implements OnInit {
           // permission was denied, but not permanently. You can ask for permission again at a later time.
         }
       })
-      .catch((e: any) => console.log('Error is', e));
-  }
 
+      .catch((e: any) => console.log("Error is", e));
+  }
 
   resultQR(resultat) {
     alert(resultat);
-
   }
+
+  cacheIconeUtilisateur() {
+    // Si connecté alors display none icone
+    $("#connect").css("display", "none");
+  }
+
+  afficheIconeUtilisateur() {
+    // Sinon display flex icone
+    $("#connect").css("display", "flex");
+  }
+
 
 }
