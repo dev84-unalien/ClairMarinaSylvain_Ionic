@@ -1,4 +1,7 @@
-<link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet" />
+<link
+  href="https://fonts.googleapis.com/css?family=Satisfy&display=swap"
+  rel="stylesheet"
+/>
 <ion-header>
   <ion-title>
     <div id="titre">
@@ -7,8 +10,10 @@
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
       </div>
-      <div id="myturn"><img class="ticket" src="assets/ticketAcc.png"></div>
-      <a class="user1" [routerLink]="['/connexion']" id="connect"><img class="user" src="assets/user.png" alt="" /></a>
+      <div id="myturn"><img class="ticket" src="assets/ticketAcc.png" /></div>
+      <a class="user1" [routerLink]="['/connexion']" id="connect"
+        ><img class="user" src="assets/user.png" alt=""
+      /></a>
     </div>
   </ion-title>
 </ion-header>
@@ -21,17 +26,21 @@
       <p>L'appli pour rejoindre votre file d'attente !</p>
     </div>
     <div class="recherche">
-      <ion-input type="search" id="search" placeholder="Recherche"><img src="" alt="" /></ion-input>
+      <ion-input type="search" id="search" placeholder="Recherche"
+        ><img src="" alt=""
+      /></ion-input>
       <ion-icon class="loupe" name="search"></ion-icon>
     </div>
     <div class="qrcode">
       <img (click)="starQR()" class="code" src="assets/qrcode.png" alt="" />
     </div>
-    <div class="plan"><img (click)="loadMap()" class="map" src="assets/plan.png" /></div>
+
+    <div class="plan">
+      <img (click)="loadMap()" class="map" src="assets/plan.png" />
+    </div>
   </div>
 
   <div id="map_canvas">
-    <!-- <img src="assets/fondmap.jpg" alt=""> -->
     <div id="hideMap" (click)="loadMap()"><button>Hide Map</button></div>
   </div>
 </ion-content>
