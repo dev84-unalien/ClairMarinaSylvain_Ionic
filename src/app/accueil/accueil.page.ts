@@ -15,7 +15,7 @@ export class AccueilPage implements OnInit {
   connexion: any;
 
   email: string;
-  map: GoogleMap;  
+  map: GoogleMap;
 
   constructor(private platform: Platform) { }
 
@@ -28,29 +28,28 @@ export class AccueilPage implements OnInit {
 
   ionViewDidEnter() {
     let user = JSON.parse(localStorage.user);
-    this.email = user.email;    
-    
+    this.email = user.email;
+
     $("#map_canvas").hide();
-      this.showMap = false;
+    this.showMap = false;
   }
 
-  showMap= false;
+  showMap = false;
 
   loadMap() {
-    if (Environment){
+    if (Environment) {
       Environment.setEnv({
         'API_KEY_FOR_BROWSER_RELEASE': 'AIzaSyBb-oaPjtNbVzZ_1YEoy_3k09z6KVdgOCQ',
         'API_KEY_FOR_BROWSER_DEBUG': 'AIzaSyBb-oaPjtNbVzZ_1YEoy_3k09z6KVdgOCQ',
       });
-      
+
     }
-    
-    
+
     if (this.showMap == false) {
       $("#fond").hide();
       $("#map_canvas").show();
       this.map = GoogleMaps.create('map_canvas');
-    //  Environment.setBackgroundColor('red');
+      //  Environment.setBackgroundColor('red');
       this.showMap = true;
     }
 
