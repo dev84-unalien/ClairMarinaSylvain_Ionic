@@ -8,7 +8,6 @@ import * as $ from "jquery";
   styleUrls: ['./file-attente.page.scss'],
 })
 export class FileAttentePage implements OnInit {
-
   appuyé = true;
   nbattente = 0;
   nbminute = 0;

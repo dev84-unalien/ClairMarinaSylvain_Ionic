@@ -41,3 +41,18 @@
 .map{
     height: 30vw;
 }
+
+#map_canvas {
+    height: 100%;
+    opacity: 1;
+}
+#map_canvas button{ 
+    color: white;
+    background: rgb(46, 94, 253);
+    height: 5vh;
+    width: 26vw;
+}
+
+ion-app .nav-decor {
+    background-color: transparent !important;
+  }
