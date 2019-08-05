@@ -2,11 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { UserService } from "../services/user.service";
 import { QRScanner, QRScannerStatus } from "@ionic-native/qr-scanner/ngx";
 import { Platform } from "@ionic/angular";
-import {
-  GoogleMaps,
-  GoogleMap,
-  Environment
-} from "@ionic-native/google-maps/ngx";
+import {GoogleMaps,GoogleMap,Environment} from "@ionic-native/google-maps/ngx";
 import * as $ from "jquery";
 
 @Component({
@@ -30,6 +26,7 @@ export class AccueilPage implements OnInit {
 
  
 
+  showMap = false;
  
   icone() {
     if (this.UserService.isConnected()) {
@@ -44,11 +41,11 @@ export class AccueilPage implements OnInit {
     let user = JSON.parse(localStorage.user);
     this.email = user.email;
     this.icone();
+
     $("#map_canvas").hide();
     this.showMap = false;
   }
 
-  showMap = false;
 
   loadMap() {
     if (Environment) {
