@@ -40,10 +40,12 @@ export class AccueilPage implements OnInit {
   ionViewDidEnter() {
     let user = JSON.parse(localStorage.user);
     this.email = user.email;
-    this.icone();
+
 
     $("#map_canvas").hide();
     this.showMap = false;
+
+    this.icone();
   }
 
 
@@ -58,6 +60,7 @@ export class AccueilPage implements OnInit {
     if (this.showMap == false) {
       $("#fond").hide();
       $("#map_canvas").show();
+
       this.map = GoogleMaps.create("map_canvas");
       //  Environment.setBackgroundColor('red');
       this.showMap = true;
