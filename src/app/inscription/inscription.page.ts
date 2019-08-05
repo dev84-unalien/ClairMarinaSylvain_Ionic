@@ -15,6 +15,7 @@ export class InscriptionPage implements OnInit {
   email: string;
   password: string;
   confirmPassword: string;
+  placeFile: string;
 
   constructor(
     public nav: NavController,
@@ -27,7 +28,8 @@ export class InscriptionPage implements OnInit {
       email: this.email,
       password: this.password,
       name: this.name,
-      surname: this.surname
+      surname: this.surname,
+      placeFile: 0,
     };
 
     this.security.verifyNameMessage(user.name);
