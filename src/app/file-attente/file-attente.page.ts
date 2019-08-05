@@ -10,7 +10,6 @@ import { Vibration } from '@ionic-native/vibration/ngx';
   styleUrls: ['./file-attente.page.scss'],
 })
 export class FileAttentePage implements OnInit {
-
   appuyé = true;
   nbattente = 0;
   nbminute = 0;

@@ -1,7 +1,4 @@
-<link
-  href="https://fonts.googleapis.com/css?family=Satisfy&display=swap"
-  rel="stylesheet"
-/>
+<link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet" />
 <ion-header>
   <ion-title>
     <div id="titre">
@@ -20,20 +17,29 @@
 <ion-content>
   <div id="fond">
     <div class="info">
-      <p>Bienvenue {{ email }}</p>
+      <p>Baienvenue {{ email }}</p>
     </div>
-    <div class="info"><p>L'appli pour rejoindre votre file d'attente !</p></div>
+    <div class="info">
+      <p>L'appli pour rejoindre votre file d'attente !</p>
+    </div>
     <div class="recherche">
-      <ion-input type="search" id="search" placeholder="Recherche"
-        ><img src="" alt=""
-      /></ion-input>
+      <ion-input type="search" id="search" placeholder="Recherche"><img src="" alt="" /></ion-input>
       <ion-icon class="loupe" name="search"></ion-icon>
     </div>
     <div class="qrcode">
       <img (click)="starQR()" class="code" src="assets/qrcode.png" alt="" />
     </div>
+<<<<<<< HEAD
     <div class="plan">
       <img class="map" src="assets/plan.png" alt="" />
     </div>
+=======
+    <div class="plan"><img (click)="loadMap()" class="map" src="assets/plan.png" /></div>
+  </div>
+
+  <div id="map_canvas">
+    <!-- <img src="assets/fondmap.jpg" alt=""> -->
+    <div id="hideMap" (click)="loadMap()"><button>Hide Map</button></div>
+>>>>>>> 0d46857e99d8597431f4cc66b031a413f69e38d1
   </div>
 </ion-content>
