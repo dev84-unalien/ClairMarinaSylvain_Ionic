@@ -24,8 +24,6 @@ export class AccueilPage implements OnInit {
     await this.platform.ready();
   }
 
- 
-
   showMap = false;
  
   icone() {
@@ -47,7 +45,6 @@ export class AccueilPage implements OnInit {
 
     this.icone();
   }
-
 
   loadMap() {
     if (Environment) {
