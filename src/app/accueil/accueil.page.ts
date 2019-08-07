@@ -4,6 +4,7 @@ import { QRScanner, QRScannerStatus } from "@ionic-native/qr-scanner/ngx";
 import { Platform, Events } from "@ionic/angular";
 import {GoogleMaps,GoogleMap,Environment} from "@ionic-native/google-maps/ngx";
 import * as $ from "jquery";
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-accueil",
@@ -21,7 +22,7 @@ export class AccueilPage implements OnInit {
   //#endregion
 
   //#region Constructeur
-  constructor(private platform: Platform, public userService: UserService, public events: Events) {
+  constructor(private router: Router, private platform: Platform, public userService: UserService, public events: Events, ) {
     events.subscribe('menu:click', () => {
       this.refreshSurnameDisplay();
       this.refreshIcone();
@@ -33,17 +34,46 @@ export class AccueilPage implements OnInit {
   async ngOnInit() {
     await this.platform.ready();
   }
+ // Evennement appelé juste avant de quitter la page
+ ionViewWillEnter() {   
+  $("#map_canvas").hide();
+  this.showMap = false;
+
+  $("#search").val("");
+
+  this.refreshSurnameDisplay();
+  this.refreshIcone();
+ }
 
   // Evennement appelé juste avant de quitter la page
   ionViewWillLeave() {}
 
   // Evennement appelé quand arrive sur page
   ionViewDidEnter() {
-    $("#map_canvas").hide();
-    this.showMap = false;
 
-    this.refreshSurnameDisplay();
-    this.refreshIcone();
+    var input = document.getElementById("search");
+
+  // Execute a function when the user releases a key on the keyboard
+  input.addEventListener("keyup", function(event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Trigger the button element with a click
+      document.getElementById("loupe").click();
+    }
+  });
+  }
+  //#endregion
+
+  //#region Barre de Recherche 
+  recherche(){
+   var cherche = $("#search").val().toLowerCase();
+
+   if (cherche == "formation"){      
+    this.router.navigateByUrl('/file-attente');
+   }
+
   }
   //#endregion
 
