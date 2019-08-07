@@ -21,7 +21,8 @@ ion-menu-toggle {
 }
 
 ion-item{
-    color: rgb(134, 92, 92);    
+    color:rgb(1, 1, 209); 
+    text-shadow: 0.1em 0.1em 0.05em rgba(51, 51, 51, 0.226) !important;
     font-size: 7vw;
 
 }
@@ -35,7 +36,7 @@ ion-item{
     margin-top: 3vw;
 }
 .button{
-    color: rgb(134, 92, 92);  
+    color: white;  
     font-size: 7vw;
     margin-left: 3.5vw;
     margin-top: 3.5vw;
