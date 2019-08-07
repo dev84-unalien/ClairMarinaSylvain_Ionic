@@ -20,12 +20,11 @@
       <div id="haut">
         <div id="hautGauche">
           <div id="nombre">Personne(s) dans la file d'attente : </div>
+          <div id="valeurNombre">&nbsp;</div>
           <div id="temps">Temps d'attente estimé : </div>
+          <div id="valeurTemps"><p *ngIf="hidevalue==false"> {{maxTime}}</p></div>
         </div>
-        <div id="hautDroite">
-            <div id="valeurNombre">&nbsp;</div>
-            <div id="valeurTemps"><p *ngIf="hidevalue==false"> {{maxTime}}</p></div>
-          </div>
+        
       </div>
       <div id="rejoindre">
         <div id="background" class="unclicked" (click)='button()'></div>
