@@ -21,8 +21,6 @@ export class AccueilPage implements OnInit {
   map: GoogleMap;
   //#endregion
 
-
-
   //#region Constructeur
   constructor(private router: Router, private platform: Platform, public userService: UserService, public events: Events, ) {
     events.subscribe('menu:click', () => {
@@ -52,12 +50,25 @@ export class AccueilPage implements OnInit {
 
   // Evennement appelé quand arrive sur page
   ionViewDidEnter() {
+
+    var input = document.getElementById("search");
+
+  // Execute a function when the user releases a key on the keyboard
+  input.addEventListener("keyup", function(event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Trigger the button element with a click
+      document.getElementById("loupe").click();
+    }
+  });
   }
   //#endregion
 
   //#region Barre de Recherche 
   recherche(){
-   var cherche = $("#search").val();
+   var cherche = $("#search").val().toLowerCase();
 
    if (cherche == "formation"){      
     this.router.navigateByUrl('/file-attente');
