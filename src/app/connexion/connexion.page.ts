@@ -9,14 +9,20 @@ import { SecurityService } from "../services/SecurityService";
   styleUrls: ["./connexion.page.scss"]
 })
 export class ConnexionPage implements OnInit {
+
+  //#region Variables
   surname: string;
   password: string;
 
   maVariable: NavController;
-
+  //#endregion 
+  //#region Constructeur
   constructor(navCtrl: NavController, public security: SecurityService) {
     this.maVariable = navCtrl;
   }
+  //#endregion
+
+  //#region Connexion
   accueil() {
     // Créer un objet utilisateur
     let user = {
@@ -25,7 +31,6 @@ export class ConnexionPage implements OnInit {
     };
 
     this.security.verifySurnameMessage(user.surname);
-
     this.security.verifyPasswordMessage(user.password);
 
     if (
@@ -42,4 +47,6 @@ export class ConnexionPage implements OnInit {
   }
 
   ngOnInit() {}
+  //#endregion
+
 }

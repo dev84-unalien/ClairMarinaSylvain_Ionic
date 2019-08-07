@@ -10,19 +10,24 @@ import { SecurityService } from "../services/SecurityService";
   styleUrls: ["./inscription.page.scss"]
 })
 export class InscriptionPage implements OnInit {
+  //#region Variables
   name: string;
   surname: string;
   email: string;
   password: string;
   confirmPassword: string;
   placeFile: string;
+  //#endregion
 
+  //#region Constructor
   constructor(
     public nav: NavController,
     public ajaxCtrl: AjaxControllerService,
     public security: SecurityService
   ) {}
+  //#endregion
 
+  //#region Connexion
   accueil() {
     let user = {
       email: this.email,
@@ -37,8 +42,6 @@ export class InscriptionPage implements OnInit {
     this.security.verifyEmailMessage(user.email);
     this.security.verifyPasswordMessage(user.password, this.confirmPassword);
 
-   
-
     if (
       this.security.checkName(user.name) &&
       this.security.checkSurname(user.surname) &&
@@ -50,6 +53,7 @@ export class InscriptionPage implements OnInit {
       this.nav.navigateForward("accueil");
     }
   }
+  //#endregion
 
   ngOnInit() {}
 }

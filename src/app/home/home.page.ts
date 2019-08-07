@@ -8,14 +8,19 @@ import { NavController } from "@ionic/angular";
 })
 export class HomePage {
 
+  //#region Variables
   email: string;
   password: string;
-
   maVariable: NavController;
+  //#endregion
 
+  //#region Constructor
   constructor(navCtrl: NavController) {
     this.maVariable = navCtrl;
   }
+  //#endregion
+
+  //#region Connexion
   connexion() {
     // Créer un objet utilisateur
     let user = {
@@ -27,4 +32,6 @@ export class HomePage {
     // Change de page
     this.maVariable.navigateForward("connexion");
   }
+  //#endregion
+  
 }
