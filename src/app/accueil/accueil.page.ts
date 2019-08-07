@@ -4,6 +4,7 @@ import { QRScanner, QRScannerStatus } from "@ionic-native/qr-scanner/ngx";
 import { Platform, Events } from "@ionic/angular";
 import {GoogleMaps,GoogleMap,Environment} from "@ionic-native/google-maps/ngx";
 import * as $ from "jquery";
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-accueil",
@@ -20,8 +21,10 @@ export class AccueilPage implements OnInit {
   map: GoogleMap;
   //#endregion
 
+
+
   //#region Constructeur
-  constructor(private platform: Platform, public userService: UserService, public events: Events) {
+  constructor(private router: Router, private platform: Platform, public userService: UserService, public events: Events, ) {
     events.subscribe('menu:click', () => {
       this.refreshSurnameDisplay();
       this.refreshIcone();
@@ -33,17 +36,33 @@ export class AccueilPage implements OnInit {
   async ngOnInit() {
     await this.platform.ready();
   }
+ // Evennement appelé juste avant de quitter la page
+ ionViewWillEnter() {   
+  $("#map_canvas").hide();
+  this.showMap = false;
+
+  $("#search").val("");
+
+  this.refreshSurnameDisplay();
+  this.refreshIcone();
+ }
 
   // Evennement appelé juste avant de quitter la page
   ionViewWillLeave() {}
 
   // Evennement appelé quand arrive sur page
   ionViewDidEnter() {
-    $("#map_canvas").hide();
-    this.showMap = false;
+  }
+  //#endregion
 
-    this.refreshSurnameDisplay();
-    this.refreshIcone();
+  //#region Barre de Recherche 
+  recherche(){
+   var cherche = $("#search").val();
+
+   if (cherche == "formation"){      
+    this.router.navigateByUrl('/file-attente');
+   }
+
   }
   //#endregion
 

@@ -26,10 +26,10 @@
       <p>L'appli pour rejoindre votre file d'attente !</p>
     </div>
     <div class="recherche">
-      <ion-input type="search" id="search" placeholder="Recherche"
+      <ion-input href="/test" type="search" id="search" placeholder="Recherche"
         ><img src="" alt=""
       /></ion-input>
-      <ion-icon class="loupe" name="search"></ion-icon>
+      <ion-icon class="loupe" (click)="recherche()" name="search"></ion-icon>
     </div>
     <div class="qrcode">
       <img (click)="starQR()" class="code" src="assets/qrcode.png" alt="" />
