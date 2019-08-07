@@ -9,7 +9,7 @@ import { SecurityService } from "../services/SecurityService";
   styleUrls: ["./connexion.page.scss"]
 })
 export class ConnexionPage implements OnInit {
-  email: string;
+  surname: string;
   password: string;
 
   maVariable: NavController;
@@ -20,16 +20,16 @@ export class ConnexionPage implements OnInit {
   accueil() {
     // Créer un objet utilisateur
     let user = {
-      email: this.email,
+      surname: this.surname,
       password: this.password
     };
 
-    this.security.verifyEmailMessage(user.password);
+    this.security.verifySurnameMessage(user.surname);
 
     this.security.verifyPasswordMessage(user.password);
 
     if (
-      this.security.checkEmail(user.email) &&
+      this.security.checkSurname(user.surname) &&
       this.security.checkPassword(user.password)
     ) {
       //Stocker l'objet dans localstorage

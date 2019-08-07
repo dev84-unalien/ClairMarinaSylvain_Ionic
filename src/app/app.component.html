@@ -1,5 +1,5 @@
 <ion-app>
-  <ion-menu side="start" menuId="first">
+  <ion-menu side="start" (ionWillOpen)="menuOpened()" menuId="first">
     <ion-header>
       <ion-toolbar color="primary">
         <ion-buttons slot="start">
@@ -18,7 +18,7 @@
           <ion-item button [routerLink]="['/connexion']">Connexion</ion-item>
           <ion-item button [routerLink]="['/inscription']">Inscription</ion-item>
           <div id="deconnexion">
-            <ion-item class="change" button (click)="button()">Déconnexion</ion-item>
+            <ion-item class="change" button (click)="buttonDeconnection()">Connexion</ion-item>
             <ion-icon name="log-out" md="md-log-out" class="deconnect"></ion-icon>
           </div>
         </ion-menu-toggle>

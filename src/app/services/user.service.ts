@@ -26,7 +26,7 @@ export class UserService {
   isConnected() {
     let connected = false;
 
-    if (this.getUser()) {
+    if (this.getUser() || localStorage.connect == "true") {
       connected = true;
     } else {
       connected = false;

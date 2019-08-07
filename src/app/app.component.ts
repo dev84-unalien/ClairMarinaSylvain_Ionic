@@ -1,8 +1,10 @@
 import { Component } from "@angular/core";
 import * as $ from "jquery";
-import { Platform, NavController } from "@ionic/angular";
+import { Platform, NavController, Events } from "@ionic/angular";
 import { SplashScreen } from "@ionic-native/splash-screen/ngx";
 import { StatusBar } from "@ionic-native/status-bar/ngx";
+import { AccueilPage } from "./accueil/accueil.page";
+import { UserService } from "./services/user.service";
 
 @Component({
   selector: "app-root",
@@ -16,7 +18,9 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    public nav: NavController
+    public nav: NavController,
+    public userServ: UserService,
+    public events: Events
   ) {
     this.initializeApp();
   }
@@ -29,15 +33,23 @@ export class AppComponent {
     }
   }
 
-  button() {
+  buttonDeconnection() {
     if (localStorage.connect == "true") {
       localStorage.connect = "false";
+      localStorage.user = "";
       this.nav.navigateForward("accueil");
+    } else {
+      this.nav.navigateForward("connexion");
+    }
+    this.events.publish('menu:click');
+  }
+
+  menuOpened () {
+    if (localStorage.connect == "false") {
       $(".change").text("Connexion");
     }
     else{
       $(".change").text("Déconnexion");
-      this.nav.navigateForward("connexion");
     }
   }
   

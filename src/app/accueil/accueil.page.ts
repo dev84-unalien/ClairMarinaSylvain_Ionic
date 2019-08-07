@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { UserService } from "../services/user.service";
 import { QRScanner, QRScannerStatus } from "@ionic-native/qr-scanner/ngx";
-import { Platform } from "@ionic/angular";
+import { Platform, Events } from "@ionic/angular";
 import {GoogleMaps,GoogleMap,Environment} from "@ionic-native/google-maps/ngx";
 import * as $ from "jquery";
 
@@ -11,41 +11,44 @@ import * as $ from "jquery";
   styleUrls: ["./accueil.page.scss"]
 })
 export class AccueilPage implements OnInit {
+
+  //#region Variables
   connection: any;
   connexion: any;
 
-  email: string;
+  surname: string;
   map: GoogleMap;
-  UserService: any;
+  //#endregion
 
-  constructor(private platform: Platform) {}
+  //#region Constructeur
+  constructor(private platform: Platform, public userService: UserService, public events: Events) {
+    events.subscribe('menu:click', () => {
+      this.refreshSurnameDisplay();
+      this.refreshIcone();
+    });
+  }
+  //#endregion
 
+  //#region Ionic Events 
   async ngOnInit() {
     await this.platform.ready();
   }
 
-  showMap = false;
- 
-  icone() {
-    if (this.UserService.isConnected()) {
-      this.cacheIconeUtilisateur();
-    } else {
-      this.afficheIconeUtilisateur();
-    }
-  }
+  // Evennement appelé juste avant de quitter la page
   ionViewWillLeave() {}
 
+  // Evennement appelé quand arrive sur page
   ionViewDidEnter() {
-    let user = JSON.parse(localStorage.user);
-    this.email = user.email;
-
-
     $("#map_canvas").hide();
     this.showMap = false;
 
-    this.icone();
+    this.refreshSurnameDisplay();
+    this.refreshIcone();
   }
+  //#endregion
 
+  //#region Map
+  showMap = false;
   loadMap() {
     if (Environment) {
       Environment.setEnv({
@@ -67,7 +70,37 @@ export class AccueilPage implements OnInit {
       this.showMap = false;
     }
   }
+  //#endregion
 
+  //#region Refresh Page HTML
+  refreshIcone() {
+    if (this.userService.isConnected()) {
+      this.cacheIconeUtilisateur();
+    } else {
+      this.afficheIconeUtilisateur();
+    }
+  }
+
+  refreshSurnameDisplay () {
+    if(localStorage.user) {
+      let user = JSON.parse(localStorage.user);
+      this.surname = user.surname + " !";
+    } else {
+      this.surname = "!";
+    }
+  }
+  cacheIconeUtilisateur() {
+    // Si connecté alors display none icone
+    $("#connect").css("display", "none");
+  }
+
+  afficheIconeUtilisateur() {
+    // Sinon display flex icone
+    $("#connect").css("display", "flex");
+  }
+  //#endregion
+  
+  //#region QR
   starQR() {
     const context = this;
     let qr = new QRScanner();
@@ -102,16 +135,6 @@ export class AccueilPage implements OnInit {
   resultQR(resultat) {
     alert(resultat);
   }
-
-  cacheIconeUtilisateur() {
-    // Si connecté alors display none icone
-    $("#connect").css("display", "none");
-  }
-
-  afficheIconeUtilisateur() {
-    // Sinon display flex icone
-    $("#connect").css("display", "flex");
-  }
-
+  //#endregion
 
 }
