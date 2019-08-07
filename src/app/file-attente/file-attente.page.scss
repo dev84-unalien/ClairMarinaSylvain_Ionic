@@ -59,16 +59,16 @@
     align-items: center;
 }
 #background {
-    height: 31.5vh;
-    width: 31.5vh;
+    height: 22vh;
+    width: 22vh;
     background-repeat: no-repeat;   
-    background-size: cover;
+    background-size: 22vh 21.5vh;
 }
 .clicked{
-    background-image: url(../../assets/redbutton.png);
+    background-image: url(../../assets/red2.png);
 }
 .unclicked{
-    background-image: url(../../assets/bluebutton.jpg);
+    background-image: url(../../assets/blue2.png);
 }
 
 #nombre ,#temps {
