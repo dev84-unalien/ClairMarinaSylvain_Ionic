@@ -12,8 +12,12 @@ import { UserService } from "./services/user.service";
   styleUrls: ["app.component.scss"]
 })
 export class AppComponent {
-  ishidden = false;
 
+  //#region Variables
+  ishidden = false;
+  //#endregion
+
+  //#region Constructor
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -24,7 +28,9 @@ export class AppComponent {
   ) {
     this.initializeApp();
   }
+  //#endregion
 
+  //#region Connexion
   click() {
     if (localStorage.connect == "true") {
       this.nav.navigateForward("file-attente");
@@ -32,7 +38,9 @@ export class AppComponent {
       this.nav.navigateForward("connexion");
     }
   }
+  //#endregion
 
+  //#region Deconnexion
   buttonDeconnection() {
     if (localStorage.connect == "true") {
       localStorage.connect = "false";
@@ -43,7 +51,9 @@ export class AppComponent {
     }
     this.events.publish('menu:click');
   }
+  //#endregion
 
+  //#region Refresh menu
   menuOpened () {
     if (localStorage.connect == "false") {
       $(".change").text("Connexion");
@@ -52,12 +62,14 @@ export class AppComponent {
       $(".change").text("Déconnexion");
     }
   }
-  
+  //#endregion
 
+  //#region affichage QR
   initializeApp() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
   }
+  //#endregion
 }

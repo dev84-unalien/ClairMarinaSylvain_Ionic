@@ -10,27 +10,35 @@ import { Vibration } from '@ionic-native/vibration/ngx';
   styleUrls: ['./file-attente.page.scss'],
 })
 export class FileAttentePage implements OnInit {
+  //#region Variables
   appuyé = true;
   nbattente = 0;
   nbminute = 0;
   nbseconde = 0;
-
-constructor() {
+  //#endregion
   
-}
+  //#region Construction
+  constructor() {
 
-vibrate () {
-  const vibration = new Vibration();
-  vibration.vibrate([2000, 1000, 2000]);
-}
+  }
+  //#endregion
+
+  //#region Vibration
+  vibrate() {
+    const vibration = new Vibration();
+    vibration.vibrate([2000, 1000, 2000]);
+  }
+  //#endregion
 
   ngOnInit() {
   }
 
+  //#region file d'attente
+
   /* setInterval(function a (){
-      this.nbminute =this.nbminute-1;
-      $("#valeurTemps").css("visibility", "visible");
-      $("#valeurTemps").text(this.nbminute); }, 1000);*/
+    this.nbminute =this.nbminute-1;
+    $("#valeurTemps").css("visibility", "visible");
+    $("#valeurTemps").text(this.nbminute); }, 1000);*/
 
   button() {
     this.vibrate();
@@ -80,9 +88,9 @@ vibrate () {
         this.nbseconde = 0;
       }
     }
-
     $("#valeurNombre").text(this.nbattente);
     $("#valeurTemps").text(this.nbminute + "min " + this.nbseconde + "sec");
-
   }
+  //#endregion
+
 }
