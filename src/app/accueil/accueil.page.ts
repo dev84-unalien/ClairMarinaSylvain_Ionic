@@ -68,7 +68,7 @@ export class AccueilPage implements OnInit {
 
   //#region Barre de Recherche 
   recherche(){
-   var cherche = $("#search").val().toLowerCase();
+   var cherche = $("#search").val().toString().toLowerCase();
 
    if (cherche == "formation"){      
     this.router.navigateByUrl('/file-attente');

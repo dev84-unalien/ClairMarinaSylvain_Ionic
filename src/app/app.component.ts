@@ -56,10 +56,10 @@ export class AppComponent {
   //#region Refresh menu
   menuOpened () {
     if (localStorage.connect == "false") {
-      $(".change").text("Connexion");
+      $(".change span").text("Connexion");
     }
     else{
-      $(".change").text("Déconnexion");
+      $(".change span").text("Déconnexion");
     }
   }
   //#endregion
