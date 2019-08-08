@@ -64,11 +64,14 @@ export class AccueilPage implements OnInit {
     }
   });
   }
+
   //#endregion
 
   //#region Barre de Recherche 
   recherche(){
+
     var cherche = $("#search").val().toString().toLowerCase();
+
 
    if (cherche == "formation"){      
     this.router.navigateByUrl('/file-attente');

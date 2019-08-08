@@ -13,12 +13,12 @@
     <ion-content>
       <ion-list>
         <ion-menu-toggle>
-          <ion-item button [routerLink]="['/accueil']">Accueil</ion-item>
-          <ion-item  button (click)="click()">File d'Attente</ion-item>
-          <ion-item  button [routerLink]="['/inscription']">Inscription</ion-item>
+          <ion-item button [routerLink]="['/accueil']"><span>Accueil</span></ion-item>
+          <ion-item  button (click)="click()"><span>File d'Attente</span></ion-item>
+          <ion-item  button [routerLink]="['/inscription']"><span>Inscription</span></ion-item>
           <div id="deconnexion">
-            <ion-item class="change" button (click)="buttonDeconnection()">Connexion</ion-item>
-            <ion-icon name="log-out" md="md-log-out" class="deconnect"></ion-icon>
+            <ion-item class="change" button (click)="buttonDeconnection()"><span>Connexion</span></ion-item>
+            <ion-icon name="log-out" md="md-log-out" class="deconnect"><span></span></ion-icon>
           </div>
         </ion-menu-toggle>
       </ion-list>

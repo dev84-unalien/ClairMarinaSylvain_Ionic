@@ -51,15 +51,16 @@ export class AppComponent {
     }
     this.events.publish('menu:click');
   }
+  
   //#endregion
 
   //#region Refresh menu
   menuOpened () {
     if (localStorage.connect == "false") {
-      $(".change").text("Connexion");
+      $(".change span").text("Connexion");
     }
     else{
-      $(".change").text("Déconnexion");
+      $(".change span").text("Déconnexion");
     }
   }
   //#endregion
