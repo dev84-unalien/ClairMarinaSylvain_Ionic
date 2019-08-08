@@ -64,6 +64,7 @@ export class AccueilPage implements OnInit {
     }
   });
   }
+
   //#endregion
 
   //#region Barre de Recherche 

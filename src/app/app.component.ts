@@ -51,6 +51,7 @@ export class AppComponent {
     }
     this.events.publish('menu:click');
   }
+  
   //#endregion
 
   //#region Refresh menu
